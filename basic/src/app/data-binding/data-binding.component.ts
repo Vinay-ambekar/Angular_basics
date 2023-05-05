@@ -7,4 +7,18 @@ import { Component } from '@angular/core';
 })
 export class DataBindingComponent {
 
+  serverId: number=10;
+  serverStratus:string='offline'
+
+  getServerStatus(){
+    return this.serverStratus;
+  }
+  allow=true
+constructor(){
+  setTimeout(() => {
+    this.allow=false
+    
+  }, 2000);
+}
+
 }
