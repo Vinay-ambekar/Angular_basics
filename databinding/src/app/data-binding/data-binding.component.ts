@@ -24,4 +24,12 @@ servercreationstatus:string="no servere was created"
 oncreatserver(){
   this.servercreationstatus="server was created"
 }
+
+servername=''
+onupdateservername(event:Event){/*event:Event */
+ this.servername=(<HTMLInputElement>event.target).value/* <HTMLInputElement> ?*/
+}
+texttochange:string=" "
+
+
 }

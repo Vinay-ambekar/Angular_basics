@@ -18,16 +18,21 @@
 </p> 
 <button (click)="oncreatserver()" >click to change</button>
 <p>{{servercreationstatus}}</p> <p>passing and using data with event binding exaple is givent below</p>
-<label for="">enter some data: </label>
-<input type="text">
+<label>enter some data: </label>
+<input type="text" (input)="onupdateservername($event)"> <!--  find out $event ? -->
+<p>{{servername}}</p>
 
 
 
 <p>
     <br>
-    ccombination of Both: two way binding=>([(ngModel)]="data")
+    ccombination of Both: two way binding=>([(ngModel)]="data") below given example <br>
+    </p>
+    <label>enter the text : </label>
+    <input type="text" [(ngModel)]="texttochange"><br>
+    <p>{{texttochange}}</p>
 
 
-</p>
+
 
 
