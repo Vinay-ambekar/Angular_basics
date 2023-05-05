@@ -20,5 +20,8 @@ constructor(){
     
   }, 2000);
 }
-
+servercreationstatus:string="no servere was created"
+oncreatserver(){
+  this.servercreationstatus="server was created"
+}
 }
