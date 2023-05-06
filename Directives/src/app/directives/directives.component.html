@@ -1,1 +1,13 @@
-<p>directives works!</p>
+<p>directives <br> what is Directives <br>
+Directives are instruction in the DOM! <br> p tag contian text and change the text color to green using 
+directives <br>&lt;p turngree &gt; recive green background &lt;/p&gt;<br><br> 
+@directives (&#123; <br>
+selector:'[turngree]'<br>&#125;) <br>export class turngreendireective&#123;<br>&#125;</p>
+
+<p>using "ngif" in a given below example after click the button p tag is appear </p>
+<button (click)="oncreatserver()">click</button>
+<p *ngIf="servercreated">server was created,server name is {{serverName}}</p>
+
+<ng-template>
+    <p>No server was created!</p>
+</ng-template>

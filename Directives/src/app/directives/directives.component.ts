@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class DirectivesComponent {
 
+  serverName:string="flase"
+  servercreated=false;
+  oncreatserver(){
+ this.servercreated=true;
+
+  }
 }
