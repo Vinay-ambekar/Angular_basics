@@ -13,4 +13,13 @@ export class DirectivesComponent {
  this.servercreated=true;
 
   }
+  
+  theNumber:string="offline "
+  constructor(){
+    this.theNumber=Math.random()>0.5 ?"online":"offline" 
+   
+  }
+  getcolor(){
+    return this.theNumber ==="online" ? 'green' :'red';
+  }   
 }
