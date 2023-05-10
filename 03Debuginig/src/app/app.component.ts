@@ -10,7 +10,7 @@ export class AppComponent {
   servers:any=[];
 
   onAddServer() {
-    this.servers.push("anothekksl ");
+    this.servers.push("add server");
   }
 
   onRemoveServer(id: number) {
