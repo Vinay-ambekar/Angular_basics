@@ -1,7 +1,10 @@
 <div class="container01">
-    <app-navabar ></app-navabar>
+  
+    <app-navabar [TransferingFromparent]="parentmessage" ></app-navabar>
+    <p style="color:rgb(37, 87, 253)">{{message}}</p>
+    <p style="color:rgb(37, 87, 253)">{{fromchildoutput}}</p>
 </div>
 <div class="container01">
-    <app-post [TransferingFromparent]="parentmessage"></app-post>
+    <app-post [TransferingFromparent]="parentmessage" (messegeEvent)="recivemessag($event)"></app-post>
 </div>
 

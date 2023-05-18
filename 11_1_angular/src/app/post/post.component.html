@@ -1,3 +1,7 @@
-<p>I am post component</p>
-<p>{{name}}</p>
-<p>{{TransferingFromparent}}</p>
+<p style="color: rgb(255, 81, 0);">I am post component</p>
+<p style="color:rgb(0, 119, 255)">{{name}}</p>
+<p style="color:rgb(0, 119, 255)">{{TransferingFromparent}}, "In a app component .html there is post coponent tag there we add as message
+    using 'bind'. </p>
+ 
+<app-post-list [frompostParent]="postParentMessage"></app-post-list>
+<button (click)="sendmessage()">click</button>
