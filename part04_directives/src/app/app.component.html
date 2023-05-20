@@ -8,11 +8,17 @@
   <li>{{postArray[4]}}</li>
 </ul>
 <p>Fetched using ngFor Directive</p>
+<button (click)="addnew()">Add new data</button>
 <ul>
   <li *ngFor="let post of postArray">{{post}}</li>
 </ul>
 <p>Fetching object array</p>
 <ul>
   <!-- <li *ngFor="let obj of objdArray">{{obj | json}}</li> -->
-  <li *ngFor="let obj of objdArray">{{obj.postTitle}}</li>
+  <li *ngFor="let obj of objdArray">{{obj.postTitle}}
+    <button (click)="ondelet(obj)">delet</button>
+  </li>
 </ul>
+<app-directives01></app-directives01>
+<app-ngif></app-ngif>
+<app-ngswitch></app-ngswitch>

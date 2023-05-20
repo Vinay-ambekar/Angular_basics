@@ -1,0 +1,20 @@
+<p>ngswitch </p>
+<!-- <div>
+    <button (click)="onclick('step1')">step1</button>
+    <button (click)="onclick('step2')">step2</button>
+    <button (click)="onclick('step3')">step3</button>
+</div>
+<div *ngIf="stepform == 'step1'">stemp 1 form</div>
+<div *ngIf="stepform == 'step2'">stemp 2 form</div>
+<div *ngIf="stepform == 'step3'">stemp 3 form</div> -->
+<div>
+    <button (click)="onclick('step1')">step1</button>
+    <button (click)="onclick('step2')">step2</button>
+    <button (click)="onclick('step3')">step3</button>
+</div>
+<div [ngSwitch]="stepform">
+    <div *ngSwitchCase="'step1'">stemp 1 form</div>
+    <div *ngSwitchCase="'step2'">stemp 2 form</div>
+    <div *ngSwitchCase="'step3'">stemp 3 form</div>
+    <div *ngSwitchDefault>{{stepform}}</div>
+</div>

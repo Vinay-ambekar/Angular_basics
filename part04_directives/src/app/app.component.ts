@@ -34,4 +34,11 @@ export class AppComponent {
     for(let i=0;i<this.postArray.length;i++)
     console.log(this.postArray[i])
   }
+  addnew(){
+    this.objdArray.push({id:6,postTitle:'post6'})
+  }
+  ondelet(obj:any){
+    let indx=this.objdArray.indexOf(obj)
+    this.objdArray.splice(indx,1);
+  }
 }

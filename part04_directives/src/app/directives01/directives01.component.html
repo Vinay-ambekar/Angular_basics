@@ -1,0 +1,9 @@
+<p>usage of array of index</p>
+<button (click)="addnew()">add</button>
+
+<ul>
+    <li *ngFor="let arra of newarray let i = index" >
+        {{arra.name}}
+        <button (click)="delet(i)">delet</button>
+    </li>
+</ul>

@@ -1,0 +1,27 @@
+<p>ngif </p>
+<!-- <button (click)="addnew()">add</button>
+
+<div *ngIf="myarray.length>0">
+    <ul>
+        <li *ngFor="let ar of myarray let i=index">
+           {{ar.name}}
+           <button (click)="ondelet(i)">dele</button>
+        </li>
+    </ul>
+</div>
+<div *ngIf="myarray.length == 0">
+    <p>there is no data to fetch.... </p>
+</div> -->
+<button (click)="addnew()">add</button>
+
+<div *ngIf="myarray.length>0 ; else noddata">
+    <ul>
+        <li *ngFor="let ar of myarray let i=index">
+           {{ar.name}}
+           <button (click)="ondelet(i)">dele</button>
+        </li>
+    </ul>
+</div>
+<ng-template #noddata>
+    <p>there is no data to fetch.... </p>
+<ng-template>
