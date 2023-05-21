@@ -1,0 +1,35 @@
+<div class="form-area">
+  <h3>user details</h3>
+  <input type="text" placeholder="name" [(ngModel)]="name">
+  <br><br>
+  <input type="text" placeholder="Email" [(ngModel)]="email">
+  <br><br>
+  <textarea placeholder="address" cols="30" rows="10" [(ngModel)]="adress"></textarea>
+  <br><br>
+  <button (click)="onclick()">save data</button>
+</div>
+<div *ngIf="userArray.length>0;else nodata">
+  <div class="table-aera">
+    <table>
+      <thead>
+        <th>#</th>
+        <th>Name</th>
+        <th>Emaail</th>
+        <th>Adress</th>
+        <th>Action</th>
+      </thead>
+      <tr *ngFor="let user of userArray;let i=index">
+        <td>{{i+1}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.address}}</td>
+        <td><button (click)="ondelet(i)">delet</button></td>
+      </tr>
+    </table>
+  
+  </div>
+  
+</div>
+<ng-template #nodata>
+ <h4>No data to show</h4>
+</ng-template>
