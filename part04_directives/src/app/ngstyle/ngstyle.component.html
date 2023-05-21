@@ -1,0 +1,20 @@
+<p>ngstyle works!</p>
+<h1 [style.color]="isActive ?'red':'black'"
+[style.textTransform]="isActive ? 'uppercase':'lowercase'"
+>Angular course</h1>
+<h1 [ngStyle]="{
+    color:isActive ? 'red':'black',
+    textTransform: isActive ? 'uppercase':'lowercase'
+}"
+>ngstyle dierctive</h1>
+<h2
+[class.main]="isActive"
+[class.text-weight]="isActive"
+>class binding</h2>
+<h2
+[ngClass]="{
+    'main':isActive,
+    'text-weight':isActive
+
+}"
+>ng class binginding</h2>

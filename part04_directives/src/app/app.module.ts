@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { Directives01Component } from './directives01/directives01.component';
 import { NgifComponent } from './ngif/ngif.component';
 import { NgswitchComponent } from './ngswitch/ngswitch.component';
+import { NgstyleComponent } from './ngstyle/ngstyle.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     Directives01Component,
     NgifComponent,
-    NgswitchComponent
+    NgswitchComponent,
+    NgstyleComponent
   ],
   imports: [
     BrowserModule,
