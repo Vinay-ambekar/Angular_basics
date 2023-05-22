@@ -1,11 +1,10 @@
 import { Injectable } from "@angular/core"
 
-
-export class PostService{
-/* 
 @Injectable({
     providedIn:'root',
-}) */
+}) 
+export class PostService{
+
 
     postList:Array<any>=[
         {id:1,postTilte:'post 1'},
