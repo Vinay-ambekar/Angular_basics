@@ -1,0 +1,59 @@
+<div class="container mt-5">
+  <h1>Angular Template Driven Form</h1>
+  <div class="form-area">
+    <form #f="ngForm" (ngsubmit)="onsubmit(f)">
+      <div class="form-group">
+        <label >First name</label>
+        <!--is not working in input  
+          #fullName="ngModel"
+         (change)="getvalue(fullName)"  -->
+        <input
+         type="text" 
+         placeholder="full name" 
+         class="form-control is-invalid" 
+         name="FullName" 
+         #fullName="ngModel"
+        
+         ngModel
+         required
+         [ngClass]="{'is-invalid':fullName.touched && fullName.invalid}"
+         minlength="5"
+         maxlength="10"
+         
+         >
+        
+        <div *ngIf="fullName.errors?.['required']">
+          <div class="alert alert-danger" *ngIf='fullName.touched && fullName.invalid'>fullname is required</div>
+         </div>
+         <div *ngIf="fullName.errors?.['minlength']">
+          <div class="alert alert-danger" *ngIf='fullName.touched && fullName.invalid'>full name altest 5 charector</div>
+         </div> 
+      
+      </div  >
+      <div class="form-group">
+      <label>Email</label>
+        <input type="text" placeholder="Email" class="form-control" name="email" ngModel #email="ngModel" 
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+        required
+        >
+        <div *ngIf="email.errors?.['pattern']"></div>
+        <div class="alert alert-danger" *ngIf='email.touched && email.invalid'>Email is required</div>
+      </div>
+     <div class="form-group">
+      <label >Adress</label>
+      <textarea placeholder="Adress" cols="30" rows="10" class="form-control" name="address" ngModel 
+      #address="ngModel"
+      required=""
+      ></textarea>
+  
+       <div class="alert alert-danger" *ngIf='email.touched && email.invalid'>Address is required</div>
+  
+     </div > 
+      
+      <button type="submit" class="btn btn-primary" [disabled]="f.invalid">Submit </button>
+   
+ 
+       </form>
+  </div>
+  
+</div>
