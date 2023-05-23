@@ -16,10 +16,10 @@
          formControlName="fullName"
          
          >
-         <div class="alert alert-danger" *ngIf='form.controls.FullName?.touched && form.controls.FullName?.invalid'>
+         <div class="alert alert-danger" *ngIf='form.controls.fullName?.touched && form.controls.fullName?.invalid'>
 
-          <div *ngIf="form.controls.FullName?.errors.required">the full name is required.</div>
-          <div *ngIf="form.controls.FullName?.errors.minLength">The full name must be at least 5 letters long </div>
+          <div *ngIf="form.controls.fullName?.errors.required">the full name is required.</div>
+          <div *ngIf="form.controls.fullName?.errors.minLength">The full name must be at least 5 letters long </div>
 
 
         </div>
@@ -33,10 +33,10 @@
         name="email"
         formControlName="email"
         >
-        <div class="alert alert-danger" *ngIf='form.controls.Email?.touched && form.controls.Email?.invalid'>
+        <div class="alert alert-danger" *ngIf='form.controls.email?.touched && form.controls.email?.invalid'>
 
-          <div *ngIf="form.controls.Email?.errors.required">Email  is required.</div>
-          <div *ngIf="form.controls.Email?.errors.pattern">email is in-correct </div>
+          <div *ngIf="form.controls.email?.errors.required">Email  is required.</div>
+          <div *ngIf="form.controls.email?.errors.pattern">email is in-correct </div>
 
 
         </div>
@@ -51,21 +51,75 @@
       name="address"
       formControlName="address"
       ></textarea>
-      <div class="alert alert-danger" *ngIf='form.controls.Address?.touched && form.controls.Address?.invalid'>
+      <div class="alert alert-danger" *ngIf='form.controls.address?.touched && form.controls.address?.invalid'>
 
-        <div *ngIf="form.controls.Address?.errors.required">please enter the address.</div>
+        <div *ngIf="form.controls.address?.errors.required">please enter the address.</div>
         
 
       </div>
       
      </div > 
 
-     <div >
+     <div [formGroup]="contactdetails">
 
-<!-- code -->
+      <div class="form-group">
+        <label>shping addres</label>
+          <input 
+          type="text" 
+          placeholder="shipping-address" 
+          class="form-control" 
+          name="shipping-address"
+          formControlName="shippingaddress"
+          >
+          <div class="alert alert-danger" *ngIf='contactdetails.controls.shippingaddress?.touched && contactdetails.controls.shippingaddress?.invalid'>
+  
+            <div *ngIf="contactdetails.controls.shippingaddress?.errors.required">enter the shiping addres  is required.</div>
+            
+  
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>contact number</label>
+            <input 
+            type="text" 
+            placeholder="contact number" 
+            class="form-control" 
+            name="email"
+            formControlName="contactNO"
+            >
+            <div class="alert alert-danger" *ngIf='contactdetails.controls.contactNO?.touched && contactdetails.controls.contactNO?.invalid'>
+    
+              <div *ngIf="contactdetails.controls.contactNO?.errors.required">entr the number </div>
+              <div *ngIf="contactdetails.controls.contactNO?.errors.pattern">enter the 10 digit number  </div>
+    
+    
+            </div>
+          </div>
 
      </div>
+<div formGroupName="billaddress"><!-- nested form group -->
 
+  <div class="form-group">
+    <label>bill number</label>
+      <input 
+      type="text" 
+      placeholder="bill number" 
+      class="form-control" 
+      name="bill number"
+      formControlName="billnumber"
+      >
+      <div class="alert alert-danger" *ngIf='form.controls.billaddress.billnumber?.touched && form.controls.billaddress.billnumber?.invalid'>
+
+        <div *ngIf="form.controls.billaddress.billnumber?.errors.required">entr  bill  number </div>
+        <!-- <div *ngIf="form.controls.billnumber?.errors.pattern">enter the 10 digit number  </div>
+ -->
+
+      </div>
+    </div>
+
+
+</div>
 
       
       <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Submit </button>
