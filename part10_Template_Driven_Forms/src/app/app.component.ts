@@ -1,6 +1,5 @@
 import { FormControl, NgForm } from '@angular/forms';
 import { Component } from '@angular/core';
-import { __values } from 'tslib';
 
 
 @Component({
