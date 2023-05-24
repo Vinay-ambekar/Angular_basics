@@ -1,0 +1,36 @@
+<div class="container">
+  <form [formGroup]="form">
+    <div class="form-group">
+      <label>Username</label>
+      <input type="text" class="form-control" formControlName="username">
+
+
+      <div *ngIf="fc.username.errors?.required">
+        <div class="alert alert-danger" *ngIf="form.get('username').touched && fc.username.invalid">username required</div>
+      </div>
+      <div *ngIf="fc.username.errors?.minlength">
+        <div class="alert alert-danger" *ngIf="form.get('username').touched && fc.username.invalid">user name be at least 5 letters</div>
+      </div>
+      <div *ngIf="fc.username.errors?.nospaceValidator">
+        <div class="alert alert-danger" *ngIf="form.get('username').touched && fc.username.invalid">user name can not contain space</div>
+      </div>
+<!--  show error 
+   <div *ngIf="fc.Username.errors?.required">
+        <div class="alert alert-danger" *ngIf="form.username.touched && fc.username.invalid">username required</div>
+      </div>  -->
+ <!--      <div *ngIf="fc.username.errors?.minlength">
+        <div class="alert alert-danger" *ngIf="fc.username.touched && fc.username.invalid">user name be at least 5 letters</div>
+      </div> -->
+
+    </div>
+    <div class="form-group">
+      <label >password</label>
+      <input type="text" class="form-control" formControlName="password">
+
+      <div *ngIf="fc.password.errors?.required">
+        <div class="alert alert-danger" *ngIf="form.get('password').touched && fc.username.invalid">pasword is required</div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">submit</button>
+  </form>
+</div>
