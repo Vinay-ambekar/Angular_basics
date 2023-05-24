@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup,FormControl, Validators} from '@angular/forms';
+import { FormGroup,FormControl, Validators, FormArray, FormBuilder} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -17,8 +17,31 @@ export class AppComponent {
   contact:string='[6789][0-9]{9}';
   
 
-constructor(){
-  this.form=new FormGroup({
+ // constructor(){
+
+ // reactive form builld
+constructor(fb:FormBuilder){
+this.form=fb.group({
+fullName:['',[
+  Validators.required,
+  Validators.minLength(this.minlength)
+]],
+email:['',[
+  Validators.required,
+  Validators.pattern(this.emailRegex)
+]],
+address:['',[Validators.required]],
+
+skills:fb.array([]),
+
+billaddress:fb.group({
+  billnumber:['',Validators.required]
+})
+
+}) 
+
+/* 
+   this.form=new FormGroup({
     fullName:new FormControl('',[
       Validators.required,
       Validators.minLength(this.minlength)
@@ -28,15 +51,20 @@ constructor(){
       Validators.pattern(this.emailRegex)
     ]),
     address: new FormControl('',Validators.required),
-    /* nested form groups */
+
+    skills:new FormArray([]),
+    // nested form groups 
     billaddress:new FormGroup({
       billnumber:new FormControl('',[
         Validators.required,
-      ])
+      ]), 
+      
     })
-  });
 
 
+  }); */
+
+  
 
   this.contactdetails=new FormGroup({
     shippingaddress:new FormControl('',Validators.required),
@@ -48,9 +76,7 @@ constructor(){
   
 
  } 
- get BillNumber(){
- return this.form.get('controls.billaddress.billnumber')
- }
+
 
 
 /*    get Email(){
@@ -67,9 +93,26 @@ get Address(){
 onsubmit(){
   console.log(this.form.value)
 }
+get Skills(){
+  return this.form.get('skills') as FormArray;
+}
 
 
 
+addskills(skills:HTMLInputElement){
+/*  (this.form.get('skills') as FormArray).push(
+  new FormControl(skills.value)
+ ) */
+ this.Skills.push(
+  new FormControl(skills.value)
+ )
+ skills.value='';
+ console.log(this.form.value)
+}
+
+removeSkills(index:any){
+  this.Skills.removeAt(index)
+}
 
 
 

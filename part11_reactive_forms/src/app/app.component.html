@@ -112,13 +112,26 @@
       <div class="alert alert-danger" *ngIf='form.controls.billaddress.billnumber?.touched && form.controls.billaddress.billnumber?.invalid'>
 
         <div *ngIf="form.controls.billaddress.billnumber?.errors.required">entr  bill  number </div>
-        <!-- <div *ngIf="form.controls.billnumber?.errors.pattern">enter the 10 digit number  </div>
+        <!-- <div *ngIf="form.controls.billnumber?.errors.pattern">enter the 10 digit number  </div> its not workign
  -->
 
       </div>
     </div>
 
 
+</div>
+
+
+<div class="form-group"><!-- raective form array -->
+
+  <label >skills</label>
+  <input type="text" class="form-control" #skills (keyup.enter)="addskills(skills)"><!-- template variabel method -->
+  <ul class="list-group">
+    <li class="list-groupt-item" *ngFor="let skill of Skills.controls; let i=index">
+      {{skill.value}}
+      <a href="" class="btn btn sm btn-danger" (click)="removeSkills(i)">X</a>
+    </li>
+  </ul>
 </div>
 
       
