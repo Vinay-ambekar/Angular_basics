@@ -1,8 +1,10 @@
 <h1>angular blog site</h1>
 <button routerLink="/" routerLinkActive="active">home</button>
-<button routerLink="/posts" routerLinkActive="active"> post list</button>
+<button routerLink="/posts" routerLinkActive="active" [queryParams]="{page:1,orderBy:'newest'}"> post list</button>
 
 <!--<a routerLink="/posts">post list</a>
 <a href="/posts">post list href</a> reload the page -->
+
+<button (click)="onsubmit()">submit</button>
 
 <router-outlet></router-outlet>
