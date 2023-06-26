@@ -12,7 +12,7 @@ export class AppComponent {
   form:any;
   constructor(fb:FormBuilder){
     this.form=fb.group({
-      username:['', [
+      username:[' ', [
         Validators.required,
         Validators.minLength(5),
         nospace.nospaceValidations

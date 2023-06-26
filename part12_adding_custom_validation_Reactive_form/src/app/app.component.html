@@ -11,9 +11,9 @@
       <div *ngIf="fc.username.errors?.minlength">
         <div class="alert alert-danger" *ngIf="form.get('username').touched && fc.username.invalid">user name be at least 5 letters</div>
       </div>
-      <div *ngIf="fc.username.errors?.nospaceValidator">
+    <!--   <div *ngIf="fc.username.errors?.nospaceValidator">
         <div class="alert alert-danger" *ngIf="form.get('username').touched && fc.username.invalid">user name can not contain space</div>
-      </div>
+      </div> -->
 <!--  show error 
    <div *ngIf="fc.Username.errors?.required">
         <div class="alert alert-danger" *ngIf="form.username.touched && fc.username.invalid">username required</div>

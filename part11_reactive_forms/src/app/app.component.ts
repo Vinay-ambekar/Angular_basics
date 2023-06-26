@@ -40,6 +40,7 @@ billaddress:fb.group({
 
 }) 
 
+
 /* 
    this.form=new FormGroup({
     fullName:new FormControl('',[
@@ -92,6 +93,8 @@ get Address(){
 
 onsubmit(){
   console.log(this.form.value)
+  console.log(this.form.value.fullName)
+  
 }
 get Skills(){
   return this.form.get('skills') as FormArray;

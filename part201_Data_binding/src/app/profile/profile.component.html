@@ -1,0 +1,20 @@
+<p>profile works!</p>
+<!-- interpolation -->
+<h2>{{name.toUpperCase}} {{age}} {{status}} {{salary*7000}}
+{{getmetho()}}
+    {{number}}
+</h2>  
+<!-- property binding -->
+<button [class]="btncolor" [disabled]="isdisable"> click</button>
+<!-- event binding -->
+<button class="btn" (click)="convert()">sohow salary in INR</button>
+
+<!-- using propery and event binding -->
+<input type="text" [value]="inputValue" (input)="getinuput($event)">
+<h1>{{inputValue}}</h1>
+<input type="text" [value]="secondinput" (input)="secondinput=$any($event.target).value">
+<h1>{{secondinput}}</h1>
+
+<!-- two way data binding -->
+<input type="text" [(ngModel)]="thirdinput">
+<h3>{{thirdinput}}</h3>
