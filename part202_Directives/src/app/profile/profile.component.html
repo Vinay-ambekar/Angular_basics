@@ -1,0 +1,55 @@
+<!-- ngif condition -->
+<h3 *ngIf="salary>50;else lowsal">party to banti hai</h3>
+
+<!-- in ts fie change the salary to 100 which is greater than 50 -->
+<ng-template #lowsal>
+    <h3>salar is comming</h3>
+</ng-template>
+
+<!-- this is ngfor directive as given below -->
+<ul >
+    <li *ngFor="let fruit of fruits; index as i;even as e">
+        <h1>{{e}}-{{i+1}}-{{fruit}}</h1>
+    </li>
+</ul>
+
+
+<!-- showing only odd using ngIf disapper the even element-->
+<ul >
+    <li *ngFor="let fruit of fruits; index as i;even as e" >
+        <h1 *ngIf="e">{{i+1}}-{{fruit}}</h1>
+    </li>
+</ul>
+
+<!-- applyig back ground color to odd and even  elements using **ngclass -->
+<ul >
+    <li *ngFor="let fruit of fruits; index as i;even as e" [ngClass]="{'red':e,'pink':!e}">
+        <h1 >{{i+1}}-{{fruit}}</h1>
+    </li>
+</ul>
+<!-- using class and tornery operator -->
+<ul >
+    <li *ngFor="let fruit of fruits; index as i;even as e" [class]="e?'red':'pink'" >
+        <h1 >{{i+1}}-{{fruit}}</h1>
+    </li>
+</ul>
+
+
+<!-- just playing with below code -->
+<div [style.backgroundColor]="bckcolor">
+
+</div>
+<select [(ngModel)]="bckcolor">
+    <option value="red" defaultSelected>red</option>
+    <option value="green">green</option>
+    <option value="blue">blue</option>
+    <option value="black">black</option>
+    <option value="	#ADD8E6">a</option>
+    <option value="#800080">b</option>
+    <option value="	#1569C7">c</option>
+    <option value="#157DEC">d</option>
+    <option value="#00FFFF">e</option>
+    <option value="#FFD700">f</option>
+    <option value="#660000">g</option>
+
+</select>
