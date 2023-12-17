@@ -12,6 +12,13 @@ export class AppComponent {
   newServerName = '';
   newServerContent = '';
 
+  firstnale:string="hellow world"
+  lastname:string="2 hellow world"
+  display:boolean=false
+
+  onclick(){/* method */
+  this.display=true
+  }
   onAddServer() {
     this.serverElements.push({
       type: 'server',

@@ -1,0 +1,12 @@
+<h1>{{headding}}</h1><!-- sting interpolation one way data binding {{}} -->
+<img [src]="product.image" ><!-- propety binding [] -->
+<p>name:{{product.name}}</p>
+<p>price:{{'$'+product.price.toFixed(2)}}</p>
+<p>color:{{product.color}}</p>
+<P>discount:{{product.discount+'%'}}</P>
+<p>discount Price :{{'$'+ discount().toFixed(2)}}</p><!--toFixed() is inbuilt methodh in angular which shoe to decimal after point  -->
+<p>{{product.instock>0?'only '+product.instock+' is left':'not in stock'}}</p>
+<button [disabled]="!(product.instock > 0)" >Buy Now</button>
+<input type="text" value="name" [attr.aria-hidden]=""><!--attr.aria-hidden is attribute binding 
+used in attributes like (attr.arial.label, attr.aria.hidden, attr.aria.expand,
+attr.aria.control, attr.data.id, attr.data.name, attr.data.value, attr.colspan) -->
