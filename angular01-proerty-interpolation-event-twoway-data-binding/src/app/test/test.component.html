@@ -7,6 +7,33 @@
 <p>discount Price :{{'$'+ discount().toFixed(2)}}</p><!--toFixed() is inbuilt methodh in angular which shoe to decimal after point  -->
 <p>{{product.instock>0?'only '+product.instock+' is left':'not in stock'}}</p>
 <button [disabled]="!(product.instock > 0)" >Buy Now</button>
-<input type="text" value="name" [attr.aria-hidden]=""><!--attr.aria-hidden is attribute binding 
+<!-- <input type="text" value="name" [attr.aria-hidden]=""> --><!--attr.aria-hidden is attribute binding 
 used in attributes like (attr.arial.label, attr.aria.hidden, attr.aria.expand,
 attr.aria.control, attr.data.id, attr.data.name, attr.data.value, attr.colspan) -->
+<br><label >{{product.firstname}}</label>
+<input  placeholder="name" (input)="inputchange($event)"/><!-- this is event binding  -->
+<p>{{product.output}}</p>
+<!-- event binding can be use input, button  -->
+<!-- types of event  
+1.(click)="onClick()"
+2.(input)="onInputChange($event)"
+3.(change)="onChange($event)"
+4.(submit)="onSubmit()"
+5.(mouseenter)="onMouseEnter()"
+6.(keydown)="onKeyDown($event)"
+7.(focus)="onFocus()"
+8.ngOnInit() { /* component initialization code */ }
+9.Custom Events:
+@Output() customEvent = new EventEmitter();
+// ...
+this.customEvent.emit(data);
+
+-->
+<button class="buttons" (click)="decriment()">-</button><!-- using event binding -->
+<span>{{number_of_porducts}}</span>
+<button class="buttons" (click)="increment()">+</button><!-- using event binding -->
+<!-- Two way dat binding uing ngmodel -->
+<!-- First import forms module in app.modules.ts --><br><br>
+<p>two way data binding uing ngmodel</p>
+<input [(ngModel)]="serch_text" />
+<p>{{serch_text}}</p>
