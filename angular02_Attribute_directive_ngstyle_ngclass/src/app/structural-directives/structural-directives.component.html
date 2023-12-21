@@ -1,0 +1,19 @@
+<p>structural-directives works! <br>
+    1.ngStyle <br>2.ngClass
+</p>
+<div class="data">
+    <div class="child-data" *ngFor="let data of Data">
+    <p>Name:{{data.name}}</p>
+    <p [ngStyle]="{color:'red'}">gender:{{data.gender}}</p><!-- ngStyle  -->
+    <p [ngStyle]="{color:data.avilabel?'green':'orange'}">avilabel:{{data.avilabel?'Availabel':'Not available'}}</p><!-- ngStyle-dynamically -->
+    </div>
+    <div>
+        <p>{{searchText}}</p>
+        <input type="search" [(ngModel)]="searchText">
+        <div>
+            <button [ngClass]="{'btn':true,'btn-search':searchText,'btn-desibale':!searchText}" [disabled]="!searchText">search</button><!-- ngClass using dynamically -->
+        </div>
+        
+    </div>
+</div>
+<!-- false ,0 ,'',undefind are false vlaue -->

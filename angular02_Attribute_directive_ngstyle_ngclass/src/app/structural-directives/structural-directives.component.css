@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.child-data{
+    border: 2px solid black;
+  padding: 10px;
+  border-radius: 10px;
+}
+.data{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    padding: 10px;
+    
+}
+p{
+    text-align: center;
+}
+input{
+    width: 300px;
+    height: 40px;
+}
+button{
+    width: 80px;
+    height: 40px;
+}
+.btn-search{
+    width: 80px;
+    height: 40px;
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 10px;
+}
+.btn-search:hover{
+    width: 80px;
+    height: 40px;
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+.btn-desibale{
+    width: 80px;
+    height: 40px;
+    color: rgb(56, 51, 51);
+    background-color: rgba(156, 151, 151, 0.623);
+    border: none;
+    border-radius: 10px;
+}
+    
