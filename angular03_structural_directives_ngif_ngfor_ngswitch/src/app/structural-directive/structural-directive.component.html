@@ -1,0 +1,37 @@
+<p>structural-directive works!</p>
+<div class="icons">
+    <div *ngFor="let header_icon of  stringarry">
+        <p> {{header_icon}}</p>
+        </div>
+    
+</div>
+
+<div *ngFor="let item of [1,2,3,4,5,6]">
+    <p>the given items are:{{item}}</p>
+</div>
+
+<div class="product_list">
+    <div *ngFor="let prod of products " >
+     <div class="Udner-product-list">
+
+        <p style="color: red;">{{prod.id}}</p>  
+        <p>{{prod.name}}</p>
+        <p>{{prod.discrpiton}}</p>
+        <p>{{prod.brand}}</p>
+        <p>{{prod.gender}}</p>
+        <span *ngIf="prod.discount">{{ 'off $ ' + prod.discount}}</span><!-- ngif condition add or remove dom element -->
+    </div>
+</div>
+<div class="search">
+    
+<h2 *ngIf="searchText !=''">searcch text :  {{searchText}}</h2><!-- using *ngIf codition  -->
+    
+    
+    <input type="search" [(ngModel)]="searchText" >
+    <button>search</button>
+
+</div>
+        
+     
+
+</div>
