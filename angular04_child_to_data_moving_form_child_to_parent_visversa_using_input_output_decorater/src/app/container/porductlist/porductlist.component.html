@@ -1,1 +1,17 @@
-<p>porductlist works!</p>
+<h1>data is moving form parent component  to child component</h1>
+<div class="info"><!-- this is product-list component and is parent of product-child01 -->
+   <div *ngFor="let inFo of info">
+    <!-- <app-product-child01  [infor]="inFo" 
+    *ngIf="selectedfilteradiobutton === 'All' || inFo.attend.toString()===selectedfilteradiobutton"></app-product-child01> --><!--moving data of ts file from product-list component to product-child01 using @inupt in product-child01 in ts file  -->
+    <app-product-child01  [infor]="inFo" 
+   *ngIf="serchtext===''||inFo.name.toLowerCase().includes(serchtext)"></app-product-child01>
+  </div>
+    
+    <!-- in the above first veiw have  to take selector file in that we are usin structural directive that is *ngFor  inFo is binding to infor   using property binding -->
+</div>
+<app-product-child02
+ [all]="totalMember"
+  [avialbel]="totalnumberavailbel"
+  [unavialbel]="notavilbel" 
+(selectedFilterRadioButtonChange)="onfilterChange($event)">
+</app-product-child02>

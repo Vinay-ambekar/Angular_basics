@@ -1,0 +1,13 @@
+.info{
+    padding: 10px;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+
+gap: 10px;
+}
+.info-list{
+    border: 2px solid black;
+    padding: 10px;
+    border-radius:10px ;
+}

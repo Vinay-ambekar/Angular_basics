@@ -1,1 +1,2 @@
-<p>container works!</p>
+<app-porductlist [serchtext]="searchtext"></app-porductlist><!-- it is from product list moving data from continer to productlist component using @input()directive it move data from 'parent to child'  -->
+<app-search (searchtextchange)="setserchtext($event)"></app-search><!-- searchtextchange is custom event 'it is from serch componet and is 'child to paretn' using @output()'-->
