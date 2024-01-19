@@ -1,0 +1,7 @@
+<ng-container *ngIf="toggle else toggleoff" >
+  <p>The toggle is on</p>
+</ng-container>
+<ng-template #toggleoff><!-- her we can not use ng-container because it through error you have container in line number 1 -->
+  <p>the toggle is off</p>
+</ng-template>
+<button (click)="ontoggle()">click</button>
